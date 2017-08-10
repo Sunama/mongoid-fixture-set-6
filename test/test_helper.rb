@@ -18,7 +18,7 @@ ActiveSupport::TestCase.test_order = :random
 
 class BaseTest < ActiveSupport::TestCase
   def teardown
-    Mongoid::Sessions.default.use('mongoid_fixture_set_test').drop
+    Mongoid::Config.purge!
   end
 end
 
