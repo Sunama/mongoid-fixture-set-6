@@ -1,7 +1,7 @@
 require 'mongoid/fixture_set/errors'
 
 module Mongoid
-  class FixtureSet
+  class FixtureSet6
     class Fixture
       include Enumerable
 
