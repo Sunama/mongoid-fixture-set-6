@@ -1,6 +1,6 @@
 module Mongoid
-  class FixtureSet
-    VERSION = '1.5.0'
+  class FixtureSet6
+    VERSION = '1.0'
   end
 end
 

@@ -1,5 +1,5 @@
 module Mongoid
-  class FixtureSet
+  class FixtureSet6
     class FixtureError < Mongoid::Errors::MongoidError
     end
 

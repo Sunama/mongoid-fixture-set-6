@@ -20,7 +20,7 @@ In your tests, add:
 
 ```ruby
 class ActiveSupport::TestCase
-  include Mongoid::FixtureSet::TestHelper
+  include Mongoid::FixtureSet6::TestHelper
   self.fixture_path = "#{Rails.root}/test/fixtures"
 end
 ```
@@ -74,7 +74,7 @@ This changes are here to let you create another class holding persistent data in
 
 ```ruby
 class TestData
-  include Mongoid::FixtureSet::TestHelper
+  include Mongoid::FixtureSet6::TestHelper
 
   self.fixture_path = "#{Rails.root}/test/fixtures_universes"
   self.load_fixtures_once = true
@@ -91,7 +91,7 @@ class TestData
 end
 
 class ActiveSupport::TestCase
-  include Mongoid::FixtureSet::TestHelper
+  include Mongoid::FixtureSet6::TestHelper
   self.fixture_path = "#{Rails.root}/test/fixtures"
 
   def data

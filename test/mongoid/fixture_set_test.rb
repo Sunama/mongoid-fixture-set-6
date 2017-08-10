@@ -2,10 +2,10 @@ require 'test_helper'
 require 'pry'
 
 module Mongoid
-  class FixtureSetTest < BaseTest
+  class FixtureSet6Test < BaseTest
     def test_should_initialize_fixture_set
-      Mongoid::FixtureSet.reset_cache
-      fs = Mongoid::FixtureSet.new('users', 'User', 'test/fixtures/users')
+      Mongoid::FixtureSet6.reset_cache
+      fs = Mongoid::FixtureSet6.new('users', 'User', 'test/fixtures/users')
       assert_equal User, fs.model_class
       fixture = fs['geoffroy']
       assert_equal 'User', fixture.class_name
@@ -14,39 +14,39 @@ module Mongoid
     end
 
     def test_should_not_create_fixtures
-      Mongoid::FixtureSet.reset_cache
-      fs = Mongoid::FixtureSet.create_fixtures('test/fixtures/', [])
+      Mongoid::FixtureSet6.reset_cache
+      fs = Mongoid::FixtureSet6.create_fixtures('test/fixtures/', [])
       assert_equal 0, fs.count
     end
 
     def test_should_create_not_model_fixture
-      Mongoid::FixtureSet.reset_cache
-      fs = Mongoid::FixtureSet.create_fixtures('test/fixtures', %w(not_models))
+      Mongoid::FixtureSet6.reset_cache
+      fs = Mongoid::FixtureSet6.create_fixtures('test/fixtures', %w(not_models))
       fs = fs.first
       fixture = fs['error']
 
       begin
         fixture.find
         assert false, 'No exception has been raised'
-      rescue Mongoid::FixtureSet::FixtureClassNotFound
+      rescue Mongoid::FixtureSet6::FixtureClassNotFound
         assert true
       end
     end
 
     test 'should raised if nested polymorphic relation' do
-      Mongoid::FixtureSet.reset_cache
+      Mongoid::FixtureSet6.reset_cache
 
       begin
-        fs = Mongoid::FixtureSet.create_fixtures('test/nested_polymorphic_relation_fixtures', %w(groups))
+        fs = Mongoid::FixtureSet6.create_fixtures('test/nested_polymorphic_relation_fixtures', %w(groups))
         assert false
-      rescue Mongoid::FixtureSet::FixtureError
+      rescue Mongoid::FixtureSet6::FixtureError
         assert true
       end
     end
 
     def test_should_create_fixtures
-      Mongoid::FixtureSet.reset_cache
-      fs = Mongoid::FixtureSet.create_fixtures('test/fixtures/', %w(users groups schools organisations))
+      Mongoid::FixtureSet6.reset_cache
+      fs = Mongoid::FixtureSet6.create_fixtures('test/fixtures/', %w(users groups schools organisations))
 
       users = fs.find{|x| x.model_class == User}
       f_geoffroy = users['geoffroy']
