@@ -1,4 +1,4 @@
-# mongoid-fixture_set
+# mongoid-fixture-set-6
 
 This projects aims to provide fixtures for Mongoid the same way you have them with ActiveRecord.
 
@@ -7,6 +7,10 @@ I am relying on the source of ActiveRecord and Mongoid to create this gem.
 Please report any issue you may find.
 
 If you'd like to contribute, but pull requests are welcome!
+
+# Notes
+
+The repository original by  Geoffroy Planquart (https://github.com/Aethelflaed/mongoid-fixture_set) but upgrade the gem to make it compatible to Mogoid 6
 
 ## Install
 

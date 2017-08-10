@@ -5,7 +5,7 @@ require 'mongoid/fixture_set/version'
 
 Gem::Specification.new do |s|
   s.license     = 'MIT'
-  s.name        = 'mongoid-fixture_set'
+  s.name        = 'mongoid-fixture-set-6'
   s.version     = Mongoid::FixtureSet6::VERSION
   s.authors     = ['Sukrit Sunama']
   s.email       = ['sunama.sukrit@gmail.com']
